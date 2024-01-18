@@ -1,7 +1,7 @@
 #!/usr/bin/python3
-import sys
-argc = len(sys.argv)
 if __name__ == "__main__":
+    import sys
+    argc = len(sys.argv)
     if argc == 1:
         print("0")
     for arg in range(2, argc):
