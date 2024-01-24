@@ -1,4 +1,8 @@
 #!/usr/bin/python3
 def square_matrix_simple(matrix=[]):
-    square_matrix = map(lambda x: x * x, matrix)
-    return square_matrix
+    mul = []
+    for i in matrix:
+        resu = map(lambda x : x * x, i)
+        resu = list(resu)
+        mul.append(resu)
+    return mul
