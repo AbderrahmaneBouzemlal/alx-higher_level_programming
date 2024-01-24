@@ -6,4 +6,4 @@ def uniq_add(my_list=[]):
         if number not in doubles:
             result += number
             doubles.append(number)
-    return(result)
+    return result
