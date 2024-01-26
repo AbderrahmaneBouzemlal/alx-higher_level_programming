@@ -9,9 +9,9 @@ def roman_to_int(roman_number):
         "D": 500
     }
     if not roman_number:
-        return None
+        return 0
     if str(roman_number).isdigit():
-        return None
+        return 0
     number = 0
     for i in range(len(roman_number)-1):
         if roman[roman_number[i]] < roman[roman_number[(i+1)]]:
