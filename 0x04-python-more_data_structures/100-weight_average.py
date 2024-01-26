@@ -14,4 +14,3 @@ def weight_average(my_list=[]):
         sum_t += i
     avg = sum_tuples / sum_t
     return avg
-
