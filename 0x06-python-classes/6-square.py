@@ -22,7 +22,7 @@ class Square:
 
     def my_print(self):
         """Prints the current square area."""
-        if self.__size == 0:
+        if self.__size <= 0:
             print()
             return
         for _ in range(self.__position[1]):
@@ -48,6 +48,7 @@ class Square:
                     or len(value) != 0:
                 raise TypeError("position must be a tuple of \
                                 2 positive integers")
+        self.__position = value
 
     @property
     def size(self):
