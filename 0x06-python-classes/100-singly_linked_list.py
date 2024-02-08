@@ -5,6 +5,8 @@ This module contains methods about the creation and hendling of
 SinglyLinkedList and Node objects.
 
 """
+
+
 class Node:
     """Defines a node of a singly linked list."""
 
@@ -17,7 +19,7 @@ class Node:
         """
 
         self.__data = data
-        self.__next_node= next_node
+        self.__next_node = next_node
 
     @property
     def data(self):
@@ -39,12 +41,15 @@ class Node:
 
     @next_node.setter
     def next_node(self, value):
-        if not isinstance(value, Node) and value != None:
+        if not isinstance(value, Node) and value is not None:
             raise TypeError("next_node must be a Node object")
+
+
 class SinglyLinkedList:
     def __init__(self):
         """Initializes an empty singly linked list"""
         self.__head = None
+
     def __str__(self):
         """Sets the print behavior of the SinglyLinkedList object."""
 
@@ -54,7 +59,7 @@ class SinglyLinkedList:
             result += str(ptr.data) + "\n"
             ptr = ptr.next_node
         return result[:-1]
-        
+
     def sorted_insert(self, value):
         new = Node(value)
         if self.__head is None or self.__head.data >= value:
