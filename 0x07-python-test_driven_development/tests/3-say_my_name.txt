@@ -1,0 +1,40 @@
+The ``3-say_my_name`` module
+===============================
+
+Using ``say_my_name``
+------------------------
+
+Importing the function from the module:
+	>>> say_my_name = __import__("3-say_my_name").say_my_name
+
+Checking for module docstring:
+	 >>> m = __import__("3-say_my_name").__doc__
+	 >>> len(m) > 1
+	 True
+
+Checking for function docstring:
+	 >>> f = __import__("3-say_my_name").say_my_name.__doc__
+     >>> len(f) > 1
+     True
+
+Checking for the normal execution:
+	 >>> say_my_name("john", "smith")
+	 My name is john smith
+	 >>> say_my_name("Walter", "White")
+	 My name is Walter White
+
+Checking for the execution with only the first name:
+	 >>> say_my_name("Bob")
+	 My name is Bob 
+
+Checking for passing a non string as an first_name:
+	 >>> say_my_name(12, "White")
+	 Traceback (most recent call last):
+	 	...
+	 TypeError: first_name must be a string
+
+Checking for passing a non string as an last_name:
+	 >>> say_my_name("heisenberg", 106)
+	 Traceback (most recent call last):
+	 	...
+	 TypeError: last_name must be a string
