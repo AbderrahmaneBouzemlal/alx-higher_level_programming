@@ -50,11 +50,13 @@ class Rectangle:
             return 0
         return 2 * (self.width + self.height)
 
-
-def __str__(self):
-    """returns printable string representation of the rectangle"""
-
-    string = ""
-    if self.width != 0 and self.height != 0:
-        string += "\n".join("#" * self.width for j in range(self.height))
-    return string
+    def __str__(self) -> str:
+        """prints the shape of the rectangle"""
+        rect = ""
+        if self.height == 0 or self.width == 0:
+            return ""
+        for i in range(self.__height):
+            if i == 0:
+                rect += "#" * self.width
+            rect += "\n" + "#" * self.width
+        return rect
