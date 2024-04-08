@@ -7,8 +7,9 @@ The 0-rectangle module supplies one function, rectangle().
 
 
 class Rectangle:
-    number_of_instances = 0
     """Defines a rectangle"""
+    number_of_instances = 0
+
     def __init__(self, width=0, height=0):
         self.width = width
         self.height = height
@@ -71,4 +72,4 @@ class Rectangle:
     def __del__(self):
         """deleting the rectangle"""
         print("Bye rectangle...")
-        Rectangle.number_of_instances += 1
+        Rectangle.number_of_instances -= 1
