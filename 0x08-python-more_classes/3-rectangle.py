@@ -52,8 +52,10 @@ class Rectangle:
 
     def __str__(self) -> str:
         """prints the shape of the rectangle"""
+        rect = ""
         if self.height == 0 or self.width == 0:
             return ""
         for _ in range(self.height):
-            rect = "#" * self.width
+            for _ in range(self.width):
+                rect += "#" + "\n"
         return rect
