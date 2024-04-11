@@ -3,9 +3,8 @@
 
 
 class LockedClass:
-    """
-    defining a method that allow to
-    set attributes only as firstname
+    """defining a method that allow to
+        set attributes only as firstname
     """
     def __setattr__(self, name: str, value):
         if not hasattr(self, "first_name") and \
