@@ -1,4 +1,4 @@
-#!/usr/bin/path
+#!/usr/bin/python3
 from typing import Any
 
 
