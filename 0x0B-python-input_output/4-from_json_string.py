@@ -1,10 +1,10 @@
 #!/user/bin/python3
 """This module contains the function from_json_string"""
-# import json
+import json
 
 
 def from_json_string(my_str):
-    """ Function that reads from a file
+    """ Function that convert from a JSON to an object
 
         Args:
             my_str: a JSON string
@@ -13,4 +13,5 @@ def from_json_string(my_str):
             Exception: when the my_str is not a JSON String
 
     """
-    return json.loads(my_str)
+    j = json.loads(my_str)
+    return json.dumps(j, sort_keys=True)
