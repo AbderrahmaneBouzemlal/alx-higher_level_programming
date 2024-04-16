@@ -1,30 +1,15 @@
 #!/usr/bin/python3
 """
-This module contains two classes BaseGeometry Rectangle
+This module contains two classes BaseGeometry and Rectangle
 """
 
-
-class BaseGeometry:
-    """A class with some validations"""
-    def area(self):
-        """raise exception"""
-        raise Exception("area() is not implemented")
-
-    def integer_validator(self, name, value):
-        """validate the values to be integer or bigger than 0"""
-        if value.__class__ != int:
-            raise TypeError(f"{name} must be an integer")
-        elif value <= 0:
-            raise ValueError(f"{name} must be greater than 0")
-
+BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
 class Rectangle(BaseGeometry):
-    w = "width"
-    h = "height"
     """A class represent the rectangle"""
     def __init__(self, width, height):
         """initialize the object of rectangle"""
+        self.integer_validator("width", width)
         self.__width = width
+        self.integer_validator("height", height)
         self.__height = height
-        super().integer_validator(Rectangle.w, self.__width)
-        super().integer_validator(Rectangle.h, self.__height)
