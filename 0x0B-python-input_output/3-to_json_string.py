@@ -8,5 +8,7 @@ def to_json_string(my_obj):
 
     Args:
         my_obj: the object to be converted
+    raises:
+        when the Object is of type set is not JSON serializable
     """
     return json.dumps(my_obj)
