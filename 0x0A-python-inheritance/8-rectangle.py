@@ -5,6 +5,7 @@ This module contains two classes BaseGeometry and Rectangle
 
 BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
+
 class Rectangle(BaseGeometry):
     """A class represent the rectangle"""
     def __init__(self, width, height):
