@@ -6,4 +6,5 @@ def read_file(filename=""):
     """return the data in the file"""
     with open(filename, "r", encoding="utf-8") as file:
         read_data = file.read()
-    return read_data
+
+    print(read_data)
