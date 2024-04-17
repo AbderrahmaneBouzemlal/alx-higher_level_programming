@@ -11,7 +11,7 @@ load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
 
 filename = 'add-item.json'
 
-if os.path.exists(filename):
+if os.path.isfile(filename):
     data = load_from_json_file(filename)
 else:
     data = []
