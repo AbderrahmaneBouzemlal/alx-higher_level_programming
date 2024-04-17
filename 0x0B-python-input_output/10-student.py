@@ -1,31 +1,32 @@
 #!/usr/bin/python3
-"""This module
-    contains a class Student
+""" Module that defines the class Student
 """
 
 
 class Student:
-    """Student class"""
+    """ Class to create student instances """
 
     def __init__(self, first_name, last_name, age):
-        """initialize the instance of the class"""
+        """ Special method to initialize """
         self.first_name = first_name
         self.last_name = last_name
         self.age = age
 
     def to_json(self, attrs=None):
-        """method to retrieve values"""
-        dic = self.__dict__.copy()
-        if type(attrs) == list:
-            if any(type(x) != str for x in attrs):
-                return dic
-            else:
-                d = {}
-                for item in attrs:
-                    try:
-                        d[item] = dic[item]
-                    except KeyError:
-                        continue
-                return d
+        """ Method that returns directory description """
+        obj = self.__dict__.copy()
+        if type(attrs) is list:
 
-        return dic
+            for item in attrs:
+                if type(item) is not str:
+                    return obj
+
+            d_list = {}
+
+            for iatr in range(len(attrs)):
+                for satr in obj:
+                    if attrs[iatr] == satr:
+                        d_list[satr] = obj[satr]
+            return d_list
+
+        return obj
