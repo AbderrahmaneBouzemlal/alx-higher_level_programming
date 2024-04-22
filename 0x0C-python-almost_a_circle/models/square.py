@@ -50,3 +50,8 @@ class Square(Rectangle):
         """representation of class"""
         return f"[{Square.__name__}] ({self.id}\
 ) {self.x}/{self.y} - {self.size}"
+
+    def to_dictionary(self):
+        """convert to dictionary"""
+        return {'x':getattr(self, "x"),'y':getattr(self, "y"),
+                'id':getattr(self, "id"), 'size': getattr(self, "width")}
