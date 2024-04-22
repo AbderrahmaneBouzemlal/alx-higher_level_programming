@@ -8,7 +8,7 @@ class Square(Rectangle):
     def __init__(self, size, x=0, y=0, id=None):
         """initialize an object"""
         super(Square, self).__init__(width=size, height=size, x=x, y=y, id=id)
-        self.size = self.width
+        self.size = size
 
     @property
     def size(self):
