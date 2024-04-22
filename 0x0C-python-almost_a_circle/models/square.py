@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """This module have the square class"""
-from models.rectangle import Rectangle
+from models.rectangle import Rectangle # type: ignore
 
 
 class Square(Rectangle):

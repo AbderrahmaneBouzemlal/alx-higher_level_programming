@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """In this module the Rectangle class"""
-from models.base import Base
+from models.base import Base # type: ignore
 
 
 class Rectangle(Base):
@@ -113,3 +113,8 @@ class Rectangle(Base):
         """the string representation"""
         return f"[{Rectangle.__name__}\
 ] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}"
+
+    def to_dictionary(self):
+        return {'x':getattr(self, "x"),'y':getattr(self, "y"),
+                'id':getattr(self, "id"), 'height' : getattr(self, "height"),
+                 'width': getattr(self, "width")}
