@@ -115,6 +115,7 @@ class Rectangle(Base):
 ] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}"
 
     def to_dictionary(self):
+        """convert to dictionary"""
         return {'x':getattr(self, "x"),'y':getattr(self, "y"),
                 'id':getattr(self, "id"), 'height' : getattr(self, "height"),
                  'width': getattr(self, "width")}
