@@ -11,7 +11,7 @@ class Rectangle(Base):
         self.height = height
         self.x = x
         self.y = y
-        if id == None:
+        if id is not None:
             super(Rectangle, self).__init__(id)
         else:
             self.id = id
@@ -20,7 +20,7 @@ class Rectangle(Base):
     def width(self):
         """a getter for the width"""
         return self.__width
-    
+
     @width.setter
     def width(self, width):
         """A setter for the width"""
@@ -34,7 +34,7 @@ class Rectangle(Base):
     def height(self):
         """a getter for the height"""
         return self.__height
-    
+
     @height.setter
     def height(self, height):
         """A setter for the height"""
@@ -107,11 +107,12 @@ class Rectangle(Base):
 
     def display(self):
         """display the rectangle"""
-        rect =  "" + "\n" * self.y
+        rect = "" + "\n" * self.y
         rect += "\n".join(" " * self.x + "#" * self.__width
                           for _ in range(self.__height))
         print(rect)
 
     def __str__(self):
         """the string representation"""
-        return f"[{Rectangle.__name__}] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}"
+        return f"[{Rectangle.__name__}\
+] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}"
