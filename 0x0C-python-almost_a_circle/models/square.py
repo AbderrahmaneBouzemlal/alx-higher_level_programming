@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """This module have the square class"""
-from models.rectangle import Rectangle # type: ignore
+from models.rectangle import Rectangle  # type: ignore
 
 
 class Square(Rectangle):
@@ -24,7 +24,7 @@ class Square(Rectangle):
             raise ValueError("width must be > 0")
         self.width = value
         self.height = value
-        
+
     def update(self, *args, **kwargs):
         """
             assigns key/value argument to attributes
@@ -53,5 +53,5 @@ class Square(Rectangle):
 
     def to_dictionary(self):
         """convert to dictionary"""
-        return {'x':getattr(self, "x"),'y':getattr(self, "y"),
-                'id':getattr(self, "id"), 'size': getattr(self, "width")}
+        return {'x': getattr(self, "x"), 'y': getattr(self, "y"),
+                'id': getattr(self, "id"), 'size': getattr(self, "width")}

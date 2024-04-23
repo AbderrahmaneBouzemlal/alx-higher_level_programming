@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """In this module the Rectangle class"""
-from models.base import Base # type: ignore
+from models.base import Base  # type: ignore
 
 
 class Rectangle(Base):
@@ -116,6 +116,6 @@ class Rectangle(Base):
 
     def to_dictionary(self):
         """convert to dictionary"""
-        return {'x':getattr(self, "x"),'y':getattr(self, "y"),
-                'id':getattr(self, "id"), 'height' : getattr(self, "height"),
-                 'width': getattr(self, "width")}
+        return {'x': getattr(self, "x"), 'y': getattr(self, "y"),
+                'id': getattr(self, "id"), 'height': getattr(self, "height"),
+                'width': getattr(self, "width")}
