@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-#rectangle.py
+# rectangle.py
 """
     contains class Rectangle which implements Base.
 """
