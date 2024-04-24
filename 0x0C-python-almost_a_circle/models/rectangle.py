@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 # rectangle.py
-from models.base import Base
 """
     contains class Rectangle which implements Base.
 """
+from models.base import Base
 
 
 class Rectangle(Base):
