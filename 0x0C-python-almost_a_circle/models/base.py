@@ -1,19 +1,27 @@
 #!/usr/bin/python3
-""" 
-In this module we are going to do Base class
-"""
+# base.py
+"""Defines a base model class."""
 import json
+import csv
+import turtle
 
 
 class Base:
+    """Represent the base model.
+
+    Represents the "base" for all other classes in project 0x0C*.
+
+    Attributes:
+        __nb_objects (int): The number of instantiated Bases.
     """
-    A class called base
-    """
+
     __nb_objects = 0
 
     def __init__(self, id=None):
-        """
-        intialize an object of the class Base
+        """Initialize a new Base.
+
+        Args:
+            id (int): The identity of the new Base.
         """
         if id is not None:
             self.id = id
@@ -21,12 +29,13 @@ class Base:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
 
+    @staticmethod
     def to_json_string(list_dictionaries):
+        """Return the JSON serialization of a list of dicts.
+
+        Args:
+            list_dictionaries (list): A list of dictionaries.
         """
-            it converts the list of dictionaries of the class to a 
-            json object
-            returns a json object
-        """
-        if list_dictionaries is None:
+        if list_dictionaries is None or list_dictionaries == []:
             return "[]"
         return json.dumps(list_dictionaries)
