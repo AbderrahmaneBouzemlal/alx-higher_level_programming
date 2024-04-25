@@ -58,3 +58,15 @@ class Base:
             return list_json
         list_json = json.loads(json_string)
         return list_json
+
+    @classmethod
+    def create(cls, **dictionary):
+        """Return a class instantied from a dictionary"""
+        if dictionary and dictionary != {}:
+            if cls.__name__ == "Rectangle":
+                new = cls(1, 1)
+            else:
+                new = cls(1)
+                new.update(**dictionary)
+            return new
+
