@@ -3,7 +3,6 @@
 """Defines a base model class."""
 import json
 import csv
-import turtle
 
 
 class Base:
@@ -61,7 +60,7 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
-        """Return a class instante from a dictionary"""
+        """Return a class instant from a dictionary"""
         if dictionary and dictionary != {}:
             if cls.__name__ == "Rectangle":
                 new = cls(1, 1)
@@ -82,3 +81,34 @@ class Base:
                 return rects
         except IOError:
             return []
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """converts the list of objects to a csv file"""
+        with open(f"{cls.__name__}.csv", "w") as csvfile:
+            fieldnames = []
+            list_dict = []
+            if list_objs is not None and type(list_objs) is list:
+                for obj in list_objs:
+                    dic = obj.to_dictionary()
+                    for k, v in dic.items():
+                        if k in fieldnames:
+                            continue
+                        fieldnames.append(k)
+                    list_dict.append(dic)
+            writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+            writer.writeheader()
+            writer.writerows(list_dict)
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """extracting data from a csv file"""
+        ls_csv = []
+        d = {}
+        with open(f"{cls.__name__}.csv", "r") as csvfile:
+            reader = csv.DictReader(csvfile)
+            for row in reader:
+                for k, v in row.items():
+                    d[k] = int(v)
+                ls_csv.append(cls.create(**d))
+        return ls_csv
