@@ -63,7 +63,7 @@ class Base:
     def create(cls, **dictionary):
         """Return a class instantied from a dictionary"""
         if dictionary and dictionary != {}:
-            if cls.__name__ == "Rectangle" or cls.__name__ == "Square":
+            if cls.__name__ == "Rectangle":
                 new = cls(1, 1)
             else:
                 new = cls(1)
