@@ -61,7 +61,7 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
-        """Return a class instantied from a dictionary"""
+        """Return a class instante from a dictionary"""
         if dictionary and dictionary != {}:
             if cls.__name__ == "Rectangle":
                 new = cls(1, 1)
@@ -69,3 +69,16 @@ class Base:
                 new = cls(1)
             new.update(**dictionary)
             return new
+
+    @classmethod
+    def load_from_file(cls):
+        try:
+            with open(f"{cls.__name__}.json", "r") as file:
+                rects = []
+                data = file.read()
+                dictionary = cls.from_json_string(data)
+                for i in dictionary:
+                    rects.append(cls.create(**i))
+                return rects
+        except IOError:
+            return []
