@@ -69,4 +69,3 @@ class Base:
                 new = cls(1)
                 new.update(**dictionary)
             return new
-
