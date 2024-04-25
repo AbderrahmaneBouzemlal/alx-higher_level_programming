@@ -44,8 +44,9 @@ class Base:
     def save_to_file(cls, list_objs):
         """class method to save a list of classes as json"""
         list_dict = []
-        for c in list_objs:
-            if (c.__dict__):
-                list_dict.append(c.__dict__.copy())
+        if list_objs != None:
+            for c in list_objs:
+                if (c.__dict__):
+                    list_dict.append(c.__dict__.copy())
         with open(f"{cls.__name__}.json", "w") as file:
             file.write(cls.to_json_string(list_dict))
