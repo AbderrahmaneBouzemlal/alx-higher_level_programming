@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 import MySQLdb
 import sys
+"""This module contains list_states function where it lists
+the states from the database"""
 
 
 def list_states(username, password, dbname):
