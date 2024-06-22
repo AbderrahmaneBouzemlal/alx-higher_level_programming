@@ -8,7 +8,8 @@ the states from the database"""
 def list_states(username, password, dbname):
     """ List all the states"""
     # Connect to the MySQL server
-    db = MySQLdb.connect(host="localhost", port=3306, user=username, passwd=password, db=dbname)
+    db = MySQLdb.connect(host="localhost",
+                         port=3306, user=username, passwd=password, db=dbname)
 
     # Create a cursor object
     cur = db.cursor()
@@ -26,6 +27,7 @@ def list_states(username, password, dbname):
     # Close the cursor and database connection
     cur.close()
     db.close()
+
 
 if __name__ == "__main__":
     # Pass the arguments (username, password, dbname)
