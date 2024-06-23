@@ -17,10 +17,10 @@ def list_states(username, password, dbname, arg):
     cur = db.cursor()
 
     # Execute the SQL query
-    cur.execute("""
+    cur.execute(f"""
                 SELECT id, name FROM states
-                WHERE name = (%s)
-                ORDER BY states.id ASC""", (arg,))
+                WHERE name = {arg}
+                ORDER BY states.id ASC""")
 
     # Fetch all the rows in a list of lists.
     rows = cur.fetchall()
