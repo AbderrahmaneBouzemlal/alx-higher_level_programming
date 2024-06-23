@@ -11,7 +11,7 @@ import sys
 import MySQLdb
 
 
-def list_states(username, password, dbname, state_name):
+def filter_cities(username, password, dbname, state_name):
     """ List all the states"""
     # Connect to the MySQL server
     db = MySQLdb.connect(host="localhost", port=3306, user=username,
@@ -52,4 +52,4 @@ if __name__ == "__main__":
     STATENAME = sys.argv[4]
 
     # Call the function to list states
-    list_states(USERNAME, PASSWORD, DBNAME, STATENAME)
+    filter_cities(USERNAME, PASSWORD, DBNAME, STATENAME)
