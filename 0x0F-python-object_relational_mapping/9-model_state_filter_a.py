@@ -22,8 +22,6 @@ if __name__ == "__main__":
 
     session = Session()
 
-    instance = session.query(State).where().filter(State.name.like('%a%')).order_by(State.id).first()
-    if instance is None:
-        print('Nothing')
-    else:
+
+    for instance in session.query(State).filter(State.name.contains('a')).order_by(State.id):
         print('{0}: {1}'.format(instance.id, instance.name))
