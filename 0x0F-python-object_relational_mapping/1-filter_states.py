@@ -11,8 +11,8 @@ import MySQLdb
 def list_states(username, password, dbname):
     """ List all the states"""
     # Connect to the MySQL server
-    db = MySQLdb.connect(host="localhost",
-                            port=3306, user=username, passwd=password, db=dbname)
+    db = MySQLdb.connect(host="localhost", port=3306, user=username,
+                         passwd=password, db=dbname)
 
     # Create a cursor object
     cur = db.cursor()
