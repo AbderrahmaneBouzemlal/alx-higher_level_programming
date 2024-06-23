@@ -3,7 +3,7 @@
 lists all states Where where name matches the argument.
 """
 
-from sys import argv
+import sys
 import MySQLdb
 
 
@@ -37,10 +37,10 @@ def list_states(username, password, dbname, arg):
 
 if __name__ == "__main__":
     # Pass the arguments (username, password, dbname)
-    USERNAME = argv[1]
-    PASSWORD = argv[2]
-    DBNAME = argv[3]
-    ARG = argv[4]
+    USERNAME = sys.argv[1]
+    PASSWORD = sys.argv[2]
+    DBNAME = sys.argv[3]
+    ARG = sys.argv[4]
 
     # Call the function to list states
     list_states(USERNAME, PASSWORD, DBNAME, ARG)
