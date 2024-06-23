@@ -20,10 +20,10 @@ def list_states(username, password, dbname, arg):
     cur = db.cursor()
 
     # Execute the SQL query
-    cur.execute(f"""
+    cur.execute("""
                 SELECT id, name FROM states
-                WHERE name LIKE BINARY '{arg}'
-                ORDER BY states.id ASC""")
+                WHERE name LIKE BINARY '{}'
+                ORDER BY states.id ASC""".format(arg))
 
     # Fetch all the rows in a list of lists.
     rows = cur.fetchall()
