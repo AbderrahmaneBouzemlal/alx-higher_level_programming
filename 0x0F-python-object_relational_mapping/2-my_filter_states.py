@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """
-lists all states with a name starting with N
-from the database
+lists all states Where where name matches the argument.
 """
 
 from sys import argv
@@ -18,8 +17,10 @@ def list_states(username, password, dbname, arg):
     cur = db.cursor()
 
     # Execute the SQL query
-    cur.execute("""SELECT id, name FROM states
-                    ORDER BY states.id ASC""")
+    cur.execute("""
+                SELECT id, name FROM states
+                WHERE name = (%s)
+                ORDER BY states.id ASC""", (arg,))
 
     # Fetch all the rows in a list of lists.
     rows = cur.fetchall()
