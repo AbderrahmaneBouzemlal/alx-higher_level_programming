@@ -4,7 +4,7 @@ lists all states with a name starting with N
 from the database
 """
 
-import sys
+from sys import argv
 import MySQLdb
 
 
@@ -20,7 +20,7 @@ def list_states(username, password, dbname):
     # Execute the SQL query
     cur.execute("""SELECT id, name FROM states
                     WHERE name LIKE BINARY 'N%'
-                    ORDER BY id ASC""")
+                    ORDER BY states.id ASC""")
 
     # Fetch all the rows in a list of lists.
     rows = cur.fetchall()
@@ -36,10 +36,9 @@ def list_states(username, password, dbname):
 
 if __name__ == "__main__":
     # Pass the arguments (username, password, dbname)
-    username = sys.argv[1]
-    password = sys.argv[2]
-    dbname = sys.argv[3]
-    print(password)
+    USERNAME = argv[1]
+    PASSWORD = argv[2]
+    DBNAME = argv[3]
 
     # Call the function to list states
-    list_states(username, password, dbname)
+    list_states(USERNAME, PASSWORD, DBNAME)
