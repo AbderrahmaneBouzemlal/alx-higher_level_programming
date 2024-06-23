@@ -1,6 +1,9 @@
 #!/usr/bin/python3
 """
-lists all states Where where name matches the argument.
+This script takes in an argument and
+displays all values in the states
+where `name` matches the argument
+from the database `hbtn_0e_0_usa`.
 """
 
 import sys
