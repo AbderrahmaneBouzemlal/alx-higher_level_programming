@@ -19,7 +19,7 @@ def list_states(username, password, dbname, arg):
     # Execute the SQL query
     cur.execute(f"""
                 SELECT id, name FROM states
-                WHERE name = {arg}
+                WHERE name LIKE BINARY '{arg}'
                 ORDER BY states.id ASC""")
 
     # Fetch all the rows in a list of lists.
