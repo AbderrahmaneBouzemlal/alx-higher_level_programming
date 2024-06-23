@@ -17,9 +17,9 @@ def list_state(username, password, dbname):
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
-    result = session.execute(select(State).order_by(State.id.asc()).all())
+    result = session.query(State).order_by(State.id)
     for row in result:
-        print(f"{row.State.id}:{row.State.name}")
+        print(f"{row.State.id}: {row.State.name}")
 
 
 if __name__ == "__main__":
