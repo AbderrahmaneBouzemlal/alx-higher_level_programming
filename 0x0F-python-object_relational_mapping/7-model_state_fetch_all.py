@@ -17,7 +17,7 @@ def list_state(username, password, dbname):
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
-    result = session.execute(select(State).order_by(State.id).all())
+    result = session.execute(select(State).order_by(State.id.asc()).all())
     for row in result:
         print(f"{row.State.id}:{row.State.name}")
 
