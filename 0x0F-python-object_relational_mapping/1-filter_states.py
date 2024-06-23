@@ -4,8 +4,8 @@ lists all states with a name starting with N
 from the database
 """
 
-import MySQLdb
 import sys
+import MySQLdb
 
 
 def list_states(username, password, dbname):
