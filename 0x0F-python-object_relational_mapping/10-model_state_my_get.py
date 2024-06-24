@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-This script lists all State objects
+This script a State object
 from the database `hbtn_0e_6_usa`.
 """
 
@@ -10,10 +10,6 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
 if __name__ == "__main__":
-    """
-    Access to the database and get the states
-    that have a from the database.
-    """
 
     state_name = argv[4]
     db_uri = 'mysql+mysqldb://{}:{}@localhost:3306/{}'.format(
@@ -25,5 +21,7 @@ if __name__ == "__main__":
     instances = session.query.get(State).\
         filter(State.name == state_name).\
         order_by(State.id)
+    if instance is None:
+        print('Not found')
     for instance in instances:
-        print('{0}: {1}'.format(instance.id, instance.name))
+        print('{0}'.format(instance.id))
