@@ -3,7 +3,7 @@
 This file contain the class definition of the city class
 and the base instance
 """
-from model_state import Base, State
+from relationship_state import Base
 from sqlalchemy import Column, Integer, String, ForeignKey
 from sqlalchemy.orm import relationship, sessionmaker
 
@@ -22,7 +22,6 @@ class City(Base):
     id = Column(
         Integer,
         autoincrement=True,
-        nullable=False,
         primary_key=True
         )
     name = Column(
@@ -31,8 +30,12 @@ class City(Base):
         )
     state_id = Column(
         Integer,
-        ForeignKey('states.id'),
+        ForeignKey(
+            'states.id',
+            ondelete='CASCADE'
+            ),
         nullable=False
         )
-
     state = relationship('State', back_populates='cities')
+from relationship_state import State
+

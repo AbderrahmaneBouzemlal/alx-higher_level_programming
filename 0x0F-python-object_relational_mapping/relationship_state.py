@@ -20,12 +20,14 @@ class State(Base):
         name (str): The State name of the class
 
     """
+
     __tablename__ = 'states'
 
     id = Column(Integer, primary_key=True, autoincrement=True, nullable=False)
     name = Column(String(128), nullable=False)
     cities = relationship(
         'City',
-        back_populates='state_id',
+        back_populates='state',
         cascade='all, delete, delete-orphan'
         )
+from relationship_city import City
