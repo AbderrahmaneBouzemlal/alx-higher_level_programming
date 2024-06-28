@@ -25,15 +25,17 @@ if __name__ == "__main__":
 
     session = Session()
 
-    query = session.query(State, City).join(City, City.state_id == State.id).order_by(State.id, City.id)
+    query = session.query(State, City)\
+        .join(City, City.state_id == State.id)\
+        .order_by(State.id, City.id)
     current = None
     for _s, _c in query.all():
-    	if _s.id != current:
-    		if current is not None:
-    			print()
-    		print("{:d}: {}||".format(_s.id, _s.name))
-    		current = _s.id
-    	print("    {:d}: {}".format(_c.id, _c.name))
+        if _s.id != current:
+            if current is not None:
+                print()
+            print("{:d}: {}||".format(_s.id, _s.name))
+            current = _s.id
+        print("    {:d}: {}".format(_c.id, _c.name))
 
     session.commit()
     session.close()
