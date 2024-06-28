@@ -11,6 +11,10 @@ from sqlalchemy.orm import sessionmaker
 
 
 if __name__ == "__main__":
+	"""
+    Access to the database and add a state California
+    and a city san francisco to the database.
+    """
     db_uri = 'mysql+mysqldb://{}:{}@localhost:3306/{}'.format(
         argv[1], argv[2], argv[3])
     engine = create_engine(db_uri)
@@ -19,7 +23,7 @@ if __name__ == "__main__":
     session = Session()
 
     California = State(name="California")
-    San_francisco = City(name='San_francisco', state=California)
+    San_francisco = City(name='San Francisco', state=California)
 
     session.add(California)
     session.add(San_francisco)
