@@ -30,4 +30,3 @@ class State(Base):
         back_populates='state',
         cascade='all, delete, delete-orphan'
         )
-from relationship_city import City

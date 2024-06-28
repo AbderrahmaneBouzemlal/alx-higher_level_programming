@@ -37,5 +37,4 @@ class City(Base):
         nullable=False
         )
     state = relationship('State', back_populates='cities')
-from relationship_state import State
 
