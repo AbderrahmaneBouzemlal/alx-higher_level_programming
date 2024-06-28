@@ -3,7 +3,7 @@
 This file contain the class definition of the city class
 and the base instance
 """
-from model_state import Base
+from model_state import Base, State
 from sqlalchemy import Column, Integer, String, ForeignKey
 from sqlalchemy.orm import relationship, sessionmaker
 
