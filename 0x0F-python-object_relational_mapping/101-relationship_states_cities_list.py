@@ -10,9 +10,6 @@ from sqlalchemy.orm import sessionmaker
 
 
 if __name__ == '__main__':
-    """
-    Access database and retrieve the wanted data
-    """
     engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'.
                            format(sys.argv[1], sys.argv[2], sys.argv[3]),
                            pool_pre_ping=True)
@@ -21,11 +18,13 @@ if __name__ == '__main__':
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    st = session.query(State).outerjoin(City).order_by(State.id, City.id).all()
+    st = session.query(State).order_by(State.id, City.id).all()
 
     for state in st:
         print("{}: {}".format(state.id, state.name))
         for city in state.cities:
             print("    {}: {}".format(city.id, city.name))
+
+
     session.commit()
     session.close()
