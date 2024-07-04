@@ -1,3 +1,3 @@
 #!/bin/bash
-#print out the size of the body
-readarray -d ' : ' -t strarr <<< "$(curl -sI "$1" | grep 'content-length')"; echo -n "${strarr[1]}"
+# takes in a URL, sends a request to that URL, and displays the size of the body of the response
+curl -sI "$1" | grep 'Content-Length:' | cut -d' ' -f2 
