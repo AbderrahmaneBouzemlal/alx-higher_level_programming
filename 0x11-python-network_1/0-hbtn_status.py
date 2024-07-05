@@ -6,11 +6,11 @@ import urllib.request as req
 
 
 if __name__ == '__main__':
-	"""processing the response """
-	reque = req.Request('https://alx-intranet.hbtn.io/status')
-	with req.urlopen(reque) as response:
-		data = response.read()
-		print('Body response:')
-		print(f'	- type: {type(data)}')
-		print(f'	- content: {data}')
-		print(f'	- utf8 content: {data.decode("utf-8")}')
+    """processing the response """
+    reque = req.Request('https://alx-intranet.hbtn.io/status')
+    with req.urlopen(reque) as response:
+        data = response.read()
+        print('Body response:')
+        print(f'    - type: {type(data)}')
+        print(f'    - content: {data}')
+        print(f'    - utf8 content: {data.decode("utf-8")}')
