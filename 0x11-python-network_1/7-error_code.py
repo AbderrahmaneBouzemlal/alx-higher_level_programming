@@ -9,10 +9,8 @@ import sys
 
 
 if __name__ == '__main__':
-	bad = requests.get(sys.argv[1])
-	try:
-		bad.raise_for_status()
-		print(bad.text)
-	except requests.exceptions.HTTPError:
-		print(f"Error code: {bad.status_code}")
-
+    bad = requests.get(sys.argv[1])
+    if bad.status_code >= 400:
+        print(f"Error code: {bad.status_code}")
+    else:
+        print(bad.text)
